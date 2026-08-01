@@ -6,14 +6,18 @@ public class Airplane
 {
     public string Name { get; set; }
     public List<Person> Manifest = new List<Person>();
-    public Airplane(string name)
+    public int MaxCapacity {get; set; }
+    public int Fuel {get; set; }
+    public Airplane(string name, int capacity, int fuel)
     {
         Name = name;
+        MaxCapacity = capacity;
+        Fuel = fuel; 
     }
 
     public void PrintManifest()
     {
-        Console.WriteLine(this.Name + " " + Manifest.Count.ToString()+ " souls onboard");
+        Console.WriteLine(this.Name + " " + Manifest.Count.ToString()+ " souls onboard" + this.Fuel.ToString() + " gallons");
 
 
         foreach(Person p in Manifest)
@@ -21,12 +25,16 @@ public class Airplane
             Console.WriteLine(p.ToString());
         }
     }
-    /// <summary>
-    /// Adds person to manifest
-    /// </summary>
-    /// <param name="p"></param>
     public void BoardPerson(Person p) 
     {
-        Manifest.Add(p);
+        if(Manifest.Count >= MaxCapacity)
+        {
+            Console.WriteLine("Go Away");
+
+        }
+        else
+        {
+            Manifest.Add(p);
+            }
     }
 }
