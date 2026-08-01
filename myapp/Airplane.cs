@@ -21,12 +21,16 @@ public class Airplane
             Console.WriteLine(p.ToString());
         }
     }
-    /// <summary>
-    /// Adds person to manifest
-    /// </summary>
-    /// <param name="p"></param>
     public void BoardPerson(Person p) 
     {
-        Manifest.Add(p);
+        if(Manifest.Count >= 3)
+        {
+            Console.WriteLine("Go Away");
+
+        }
+        else
+        {
+            Manifest.Add(p);
+            }
     }
 }
