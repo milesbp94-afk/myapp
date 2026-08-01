@@ -4,11 +4,11 @@ Person bob = new Person(1, "Bob");
 Person tom = new Person(2, "Tom");
 Person hank = new Person(3, "Hank");
 Person al = new Person(4, "Al");
-
 // Console.WriteLine(tom.ToString());
-Airplane B747 = new Airplane("Flight1");
-B747.BoardPerson(bob);
-B747.BoardPerson(tom);
-B747.BoardPerson(hank);
-B747.BoardPerson(al);
-B747.PrintManifest();
+Airplane B757 = new Airplane("Flight1", 5, 100 );
+
+B757.BoardPerson(bob);
+B757.BoardPerson(tom);
+B757.BoardPerson(hank);
+B757.BoardPerson(al);
+B757.PrintManifest();
